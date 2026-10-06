@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juvie Pon Bacanto | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-color: #0b0b0e;
+            --card-bg: rgba(22, 22, 29, 0.7);
+            --border-color: rgba(235, 87, 142, 0.2);
+            --primary-pink: #ff65a3;
+            --accent-pink: #ea4c89;
+            --dark-pink: #9a2053;
+            --glow-pink: rgba(255, 101, 163, 0.35);
+            --text-main: #f3f3f6;
+            --text-muted: #a0a0b0;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+       
+        .glass {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+        }
+
+        
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(11, 11, 14, 0.85);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo-icon {
+            color: var(--primary-pink);
+            font-size: 1.8rem;
+            filter: drop-shadow(0 0 8px var(--primary-pink));
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-pink);
+            text-shadow: 0 0 10px var(--glow-pink);
+        }
+
+      
+        .hero {
+            min-height: 100vh;
+            padding: 120px 8% 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        
+        .pink-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--accent-pink) 0%, var(--dark-pink) 70%, transparent 100%);
+            opacity: 0.5;
+            filter: blur(40px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .circle-1 {
+            width: 450px;
+            height: 450px;
+            right: 5%;
+            top: 20%;
+        }
+
+        .circle-2 {
+            width: 280px;
+            height: 280px;
+            left: -80px;
+            bottom: 10%;
+        }
+
+        .circle-3 {
+            width: 180px;
+            height: 180px;
+            right: 35%;
+            top: 15%;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 550px;
+            z-index: 1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-main);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .hero-title {
+            font-size: 3.8rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .hero-title span {
+            color: var(--primary-pink);
+            display: block;
+        }
+
+        .hero-desc {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            padding: 12px 32px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #fff;
+            color: #000;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-pink);
+            color: #fff;
+            box-shadow: 0 0 25px var(--primary-pink);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-pink);
+            color: var(--primary-pink);
+            transform: translateY(-2px);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 18px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            background: var(--primary-pink);
+            color: #fff;
+            transform: translateY(-4px);
+            box-shadow: 0 5px 15px var(--glow-pink);
+        }
+
+       
+        .hero-image-wrapper {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image-container {
+            width: 440px;
+            height: 420px;
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px dashed rgba(255, 255, 255, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            transition: var(--transition);
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        
+        section {
+            padding: 100px 8%;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            color: var(--primary-pink);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+      
+        .about-card {
+            padding: 50px;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-card p {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: #d1d1e0;
+            text-align: center;
+        }
+
+        .about-highlights {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .highlight-tag {
+            padding: 8px 18px;
+            background: rgba(255, 101, 163, 0.1);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            color: var(--primary-pink);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        
+        .works-subsection {
+            margin-bottom: 60px;
+        }
+
+        .works-category-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .works-category-title i {
+            color: var(--primary-pink);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .work-card {
+            aspect-ratio: 4/3;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px dashed rgba(255, 255, 255, 0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .work-card:hover {
+            border-color: var(--primary-pink);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px var(--glow-pink);
+        }
+
+        .work-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .blank-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            z-index: 2;
+        }
+
+        .blank-placeholder i {
+            font-size: 1.8rem;
+            color: var(--primary-pink);
+            opacity: 0.8;
+        }
+
+        
+        .skills-hobbies-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .skill-box {
+            padding: 40px;
+        }
+
+        .skills-list, .hobbies-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-chip {
+            padding: 12px 22px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+        }
+
+        .skill-chip i {
+            color: var(--primary-pink);
+        }
+
+        .skill-chip:hover {
+            background: var(--primary-pink);
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px var(--glow-pink);
+        }
+
+        .skill-chip:hover i {
+            color: #fff;
+        }
+
+       
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary-pink), transparent);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 40px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 11px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary-pink);
+            box-shadow: 0 0 10px var(--primary-pink);
+        }
+
+        .timeline-card {
+            padding: 30px;
+        }
+
+        .timeline-card h3 {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .timeline-card h4 {
+            color: var(--primary-pink);
+            font-size: 1rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .timeline-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .info-card {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
+            background: rgba(255, 101, 163, 0.1);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-pink);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .info-text h5 {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-text p {
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .contact-form {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: #fff;
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--primary-pink);
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+       
+        .top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-pink);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 5px 20px var(--glow-pink);
+            transition: var(--transition);
+            z-index: 99;
+        }
+
+        .top-btn:hover {
+            transform: translateY(-5px);
+            background: #fff;
+            color: var(--primary-pink);
+        }
+
+        footer {
+            padding: 30px 8%;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+    
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 50px;
+                padding-top: 140px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-buttons, .social-icons {
+                justify-content: center;
+            }
+
+            .skills-hobbies-container, .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 5%;
+            }
+
+            .nav-links {
+                display: none; 
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+
+            .hero-image-container {
+                width: 320px;
+                height: 400px;
+            }
+
+            .about-card {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="pink-circle circle-1"></div>
+    <div class="pink-circle circle-2"></div>
+    <div class="pink-circle circle-3"></div>
+
+    
+    <header>
+        <a href="#home" class="logo">
+            <i class="fa-solid fa-palette logo-icon"></i>
+            <span>JUVIE</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#works">My Works</a></li>
+            <li><a href="#skills">Skills & Hobbies</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+        </ul>
+    </header>
+
+   
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <p class="hero-subtitle">Hi, I'm Juvie Pon Bacanto</p>
+            <h1 class="hero-title">
+                BSBA Student <span>& Artist</span>
+            </h1>
+            <p class="hero-desc">
+                Creating detailed and expressive art through traditional and digital mediums.
+            </p>
+            <div class="hero-buttons">
+                <a href="#works" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-outline">Get in Touch</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank" class="social-icon" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://instagram.com/juviepon06" target="_blank" class="social-icon" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://tiktok.com/@juviearts" target="_blank" class="social-icon" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="mailto:juvieponbacanto@gmail.com" class="social-icon" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+
+        
+        <div class="hero-image-wrapper">
+            <div class="hero-image-container">
+        
+                <img src="4a17abdd-3e10-49ed-b47e-33c70946cb78.jpg" alt="Juvie Pon Bacanto Profile Photo">
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="about">
+        <div class="section-header">
+            <span class="section-tag">Introduction</span>
+            <h2 class="section-title">About Me</h2>
+        </div>
+        <div class="about-card glass">
+            <p>
+                I am <strong>Juvie Pon Bacanto</strong>, a third-year college student at <strong>Dr. Aurelio Mendoza Memorial Colleges</strong> in Zamboanga Sibugay. I am a talented and passionate individual who loves art and enjoys expressing my creativity through drawing, digital art, painting, and photography. I am always eager to improve my skills, explore new ideas, and create meaningful and visually engaging artworks.
+            </p>
+            <div class="about-highlights">
+                <span class="highlight-tag"><i class="fa-solid fa-graduation-cap"></i> 3rd Year College</span>
+                <span class="highlight-tag"><i class="fa-solid fa-paintbrush"></i> Traditional & Digital</span>
+                <span class="highlight-tag"><i class="fa-solid fa-camera"></i> Photography Enthusiast</span>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="works">
+        <div class="section-header">
+            <span class="section-tag">Portfolio</span>
+            <h2 class="section-title">My Works</h2>
+        </div>
+
+        
+        <div class="works-subsection">
+            <h3 class="works-category-title"><i class="fa-solid fa-pencil"></i> Drawing (3)</h3>
+            <div class="gallery-grid">
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                    <img src="Screenshot 2026-10-05 200928.png" alt="" srcset="">
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                        <img src="Screenshot 2026-10-05 200952.png" alt="" srcset="">
+                        <span>Drawing Blank Space 2</span>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                        <img src="Screenshot 2026-10-05 201008.png" alt="" srcset="">
+                        <span>Drawing Blank Space 3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="works-subsection">
+            <h3 class="works-category-title"><i class="fa-solid fa-palette"></i> Painting (1)</h3>
+            <div class="gallery-grid">
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                        <img src="Screenshot 2026-10-05 201303.png" alt="" srcset="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="works-subsection">
+            <h3 class="works-category-title"><i class="fa-solid fa-laptop-code"></i> Digital Art (5)</h3>
+            <div class="gallery-grid">
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                        <img src="Screenshot 2026-10-05 201425.png" alt="" srcset="">
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                        <img src="Screenshot 2026-10-05 201412.png" alt="" srcset="">
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                      <img src="Screenshot 2026-10-05 201401.png" alt="" srcset="">
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                      <img src="Screenshot 2026-10-05 201343.png" alt="" srcset="">
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                        <img src="Screenshot 2026-10-05 201326.png" alt="" srcset="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+     
+        <div class="works-subsection">
+            <h3 class="works-category-title"><i class="fa-solid fa-user"></i> Portraits (5)</h3>
+            <div class="gallery-grid">
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                        <img src="Screenshot 2026-10-05 201653.png" alt="" srcset="">
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                        <img src="Screenshot 2026-10-05 201639.png" alt="" srcset="">
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                        <img src="Screenshot 2026-10-05 201523.png" alt="" srcset="">
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                       <img src="Screenshot 2026-10-05 201510.png" alt="" srcset="">>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                        <img src="Screenshot 2026-10-05 201450.png" alt="" srcset="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="skills">
+        <div class="section-header">
+            <span class="section-tag">Capabilities & Passions</span>
+            <h2 class="section-title">Skills & Hobbies</h2>
+        </div>
+        <div class="skills-hobbies-container">
+           
+            <div class="skill-box glass">
+                <h3 class="works-category-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Skills & Talents</h3>
+                <div class="skills-list">
+                    <div class="skill-chip"><i class="fa-solid fa-check"></i> Realistic Drawing</div>
+                    <div class="skill-chip"><i class="fa-solid fa-check"></i> Portrait Drawing</div>
+                    <div class="skill-chip"><i class="fa-solid fa-check"></i> Photo Editing</div>
+                    <div class="skill-chip"><i class="fa-solid fa-check"></i> Traditional Painting</div>
+                </div>
+            </div>
+
+            
+            <div class="skill-box glass">
+                <h3 class="works-category-title"><i class="fa-solid fa-heart"></i> Hobbies & Interests</h3>
+                <div class="hobbies-list">
+                    <div class="skill-chip"><i class="fa-solid fa-pen-nib"></i> Drawing & Sketching</div>
+                    <div class="skill-chip"><i class="fa-solid fa-book-open"></i> Reading Manhwa</div>
+                    <div class="skill-chip"><i class="fa-solid fa-film"></i> Watching Movies & Anime</div>
+                    <div class="skill-chip"><i class="fa-solid fa-compass"></i> Exploring New Art Style</div>
+                    <div class="skill-chip"><i class="fa-solid fa-lightbulb"></i> Designing & Creating Projects</div>
+                    <div class="skill-chip"><i class="fa-solid fa-camera"></i> Photography</div>
+                    <div class="skill-chip"><i class="fa-solid fa-scissors"></i> Sewing</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="education">
+        <div class="section-header">
+            <span class="section-tag">Academic Journey</span>
+            <h2 class="section-title">Education</h2>
+        </div>
+        <div class="timeline">
+           
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card glass">
+                    <h3>Dr. Aurelio Mendoza Memorial Colleges</h3>
+                    <h4>Bachelor of Science in Business Administration Major in Financial Management</h4>
+                    <p>Current (3rd Year College)</p>
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card glass">
+                    <h3>Gutalac National High School</h3>
+                    <h4>High School Diploma</h4>
+                    <p>Graduate</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card glass">
+                    <h3>Sirawai Central School</h3>
+                    <h4>Elementary Education</h4>
+                    <p>Graduate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="achievements">
+        <div class="section-header">
+            <span class="section-tag">Milestones</span>
+            <h2 class="section-title">Achievements & Experience</h2>
+        </div>
+
+       
+        <div class="works-subsection">
+            <h3 class="works-category-title"><i class="fa-solid fa-trophy"></i> Art Competitions (3)</h3>
+            <div class="gallery-grid">
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                        <img src="15ed4955-2ff7-40a1-b9a2-ecebfec2e746.jpg" alt="" srcset="">
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                        <img src="490a1f77-0edd-4d3d-b7c9-8b1b56065a98.jpg" alt="" srcset="">
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                        <img src="ebafbf13-190b-40ff-9d13-9b6502ee5dac.jpg" alt="" srcset="">>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      
+        <div class="works-subsection">
+            <h3 class="works-category-title"><i class="fa-solid fa-certificate"></i> Certificates (5)</h3>
+            <div class="gallery-grid">
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                        <img src="827709f8-5f31-403f-be87-42c57a11d5af.jpg" alt="" srcset="">
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                        <img src="34565788-9b13-4846-a113-aaa4dc0d7ece.jpg" alt="" srcset="">
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                        <img src="b9b01f6a-048a-4691-b541-12c3fd0d2b0e.jpg" alt="" srcset="">
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                        <img src="cf326df8-40b9-4ca2-ba4f-075dd39027e3.jpg" alt="" srcset="">
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                        <img src="da98964c-bb61-4ebc-8d21-4964e0efbcaf.jpg" alt="" srcset="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="works-subsection">
+            <h3 class="works-category-title"><i class="fa-solid fa-handshake"></i> Commissions Contact (6)</h3>
+            <div class="gallery-grid">
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                        <img src="Screenshot 2026-10-05 200733.png" alt="" srcset="">
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                        <img src="Screenshot 2026-10-05 200750.png" alt="" srcset="">
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                        <img src="Screenshot 2026-10-05 200812.png" alt="" srcset="">
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                       <img src="Screenshot 2026-10-05 200828.png" alt="" srcset="">
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                       <img src="Screenshot 2026-10-05 200851.png" alt="" srcset="">
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="blank-placeholder">
+                        <img src="Screenshot 2026-10-05 200909.png" alt="" srcset="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <section id="contact">
+        <div class="section-header">
+            <span class="section-tag">Get In Touch</span>
+            <h2 class="section-title">Contact Information</h2> 
+        </div>
+        <div class="contact-container">
+            <div class="info-card glass">
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="info-text">
+                        <h5>Email</h5>
+                        <p>juvieponbacanto@gmail.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-brands fa-facebook-f"></i></div>
+                    <div class="info-text">
+                        <h5>Facebook</h5>
+                        <p>Juvie Pon Bacanto</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-brands fa-instagram"></i></div>
+                    <div class="info-text">
+                        <h5>Instagram</h5>
+                        <p>juviepon06</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-brands fa-tiktok"></i></div>
+                    <div class="info-text">
+                        <h5>TikTok</h5>
+                        <p>juviearts</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="info-text">
+                        <h5>Address</h5>
+                        <p>Ipil Zamboanga Sibugay near Lyceum Elementary school</p>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form glass" onsubmit="event.preventDefault(); alert('Message feature ready!');">
+                <h3 style="color: #fff; margin-bottom: 10px;">Send a Message</h3>
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea rows="5" placeholder="Your Message or Inquiry..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="border: none; width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <a href="#home" class="top-btn" title="Go to top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </a>
+
+   
+    <footer>
+        <p>&copy; 2026 Juvie Pon Bacanto. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
